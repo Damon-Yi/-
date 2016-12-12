@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>推荐好友</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="plugin/swiper/swiper.3.1.7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/swiper/swiper.3.1.7.min.js"></script>
+    <script type="text/javascript" src="plugin/jquery/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="plugin/jquery/easing.js"></script>
+    <style>
+        body{background-color: #103a60;}
+        #body_wrapper{}
+        .anniver_active{padding-bottom:0.2rem;padding-top:0.76rem;background: rgba(16,58,96,1) url(images/anniversary_24.png) no-repeat center top;background-size:contain;min-height:5rem;max-width: 500px;margin: 0 auto;}
+        .anniver_active img{display: block;margin-left:auto;margin-right:auto;}
+        .a_img_0{width: 3.04rem;position: fixed;top: 0;left: 50%;margin-left:-1.52rem;z-index: 2;}
+
+        .re_cont{padding:0.72rem 0.26rem 0.26rem;}
+
+        .re_cont .re_rule{color: #5e5e5e;font-size: 0.2rem;background-color: #195287;padding: 0.08rem;border-radius: 0.1rem;margin-top: 0.5rem;position: relative;}
+        .re_cont .re_rule>div{background-color: #fff;border-radius: 0.1rem;padding:0.3rem;}
+        .re_cont .re_rule .re_r_p_1{color: #f5641a;font-size: 0.26rem;text-align: center;position: relative;height: 0.5rem;line-height: 0.5rem;}
+        .re_cont .re_rule .re_r_p_1:before{content:"";position: absolute;display: block;height: 1px;width:1.6rem;background-color: #f5641a;left: 0.1rem;top:0.24rem;}
+        .re_cont .re_rule .re_r_p_1:after{content:"";position: absolute;display: block;height: 1px;width:1.6rem;background-color: #f5641a;right: 0.1rem;top:0.24rem;}
+        .re_cont .re_rule .re_r_p_2{word-break: break-all;margin-top: 0.16rem;}
+        .re_cont .re_rule .re_r_p_2>span{color: #f5641a;}
+
+        /**/
+        .more_rec{display: none;width:4.3rem;position: relative;margin: 0 auto;padding-top: 1.2rem;padding: 0.36rem;}
+        .more_rec>div{width:3.58rem;background-color: #ffedc3;border-radius: 0.1rem;padding-top: 0.3rem;padding-bottom: 0.37rem;}
+        .more_rec .p_1{font-size: 0.3rem;color: #f5641a;margin-top: 0.56rem;margin-bottom: 0.2rem;}
+        .more_rec .p_2{font-size: 0.3rem;color: #5c5c5c;margin-bottom: 0.08rem;}
+        .more_rec .p_2 .num{color: #f5641a;}
+        .more_rec .grab_btn{width:2rem;margin:0.4rem auto 0.18rem;font-size: 0;height:0.48rem;background: url(images/anniversary_23.png) no-repeat center center;background-size: contain;color: #fff;font-size: 0.24rem;text-align: center;line-height: 0.48rem;}
+        .more_rec .grab_btn>img{width:100%;}
+        .more_rec .close_btn{position: absolute;width:0.3rem;font-size: 0;top: 0;right: 0.1rem;}
+        .more_rec .close_btn>img{width:100%;}
+
+        .tiger_box{width:304px;height:287px;background:url(images/anniversary_25.png) no-repeat center top;background-size:contain;margin: 0 auto;position: relative;left: 0.2rem;}
+        .tiger_box .roll_btn{color: #2f455c;font-size: 0.34rem;position: absolute;bottom: 13px;text-align: center;height: 53px;width: 250px;left: 5%;font-weight: bold;line-height: 48px;}
+
+        .num_box{width: 246px;position: absolute;left: 18px;top: 80px;overflow: hidden;height:97.8px;display: flex;display: -webkit-flex;}
+        .num{background-position:top center; background-repeat:repeat-y;background-size: cover;-webkit-flex: 1;flex: 1;}
+        .num_1{background-image: url(images/roll_1.png);}
+        .num_2{background-image: url(images/roll_2.png);}
+        .num_3{background-image: url(images/roll_3.png);}
+    </style>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <img class="a_img_0" src="images/anniversary_8.png" alt="">
+    <article id="body_wrapper">
+        <div>
+            <div class="anniver_active">
+                <div class="re_cont">
+                    <div class="tiger_box">
+                        <div class="num_box">
+                            <div class="num num_1"></div>
+                            <div class="num num_2"></div>
+                            <div class="num num_3"></div>
+                        </div>
+                        <div class="roll_btn">立即摇奖</div>
+                    </div>
+                    <div class="re_rule">
+                        <div>
+                            <p class="re_r_p_1">奖品兑换规则</p>
+                            <p class="re_r_p_2">抽中金额立马抵扣到<span>您的还款计划中</span>。</p>
+                            <p class="re_r_p_2">如果您抽到“<span>全免单</span>”，佰仟为您减免您最近办理的一笔合同的<span>全部剩余还款额</span>，合同在第二天自动提前结清。</p>
+                            <p class="re_r_p_2">如果您抽到“<span>还款抵用券</span>”，系统会自动为您抵扣<span>每个月的客户服务费和财务管理费</span>，从最近一期开始抵扣，直至券额抵清。</p>
+                            <p class="re_r_p_2">如果费用不足以抵扣，您在90天内再办理佰仟分期可继续抵扣。</p>
+                            <p class="re_r_p_2">
+                            *本活动最终解释权归佰仟金融所有</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!--中奖结果-->
+    <div class="more_rec">
+        <div>
+            <p class="p_1">恭喜您！</p> 
+            <p class="p_2">获得<span class="num">XX</span>元还款抵扣券！</p> 
+            <div class="grab_btn">继续推荐</div>
+            <div class="close_btn"><img src="images/anniversary_21.png" alt=""></div>
+        </div>
+    </div>
+    <script>
+        /*loading效果*/
+        var loader = new loading();
+        var isBegin = false;
+        var u = 97.8;
+        $(function(){
+            $('.roll_btn').on('click',function(){
+                if(isBegin) return false;
+                isBegin = true;
+                $(".num").css('backgroundPositionY',0);
+                var result = numRand();
+                console.log(result);
+                var num_arr = handleResult(result);
+                $(".num").each(function(index){
+                    var _num = $(this);
+                    var reverseIndex = index==0?2:(index==1?1:0);
+                    setTimeout(function(){
+                        _num.animate({ 
+                            backgroundPositionY: (u*88) - (u*num_arr[index])-u
+                        },{
+                            duration: 3000+reverseIndex*3000,
+                            easing: "easeInOutCirc",
+                            complete: function(){
+                                if(index==0){
+                                    isBegin = false;
+                                    $('.more_rec .num').text(result);
+                                    moreRecfoLayer().show();
+                                }
+
+                            }
+                        });
+                    },reverseIndex*300);
+                });
+            });
+        });
+        function handleResult(num){
+            var result_arr = (num+'').split('');
+            var num_arr = ['0','0','0'];
+            for(var i=0;i<result_arr.length;i++){
+                num_arr[num_arr.length-1-i] = result_arr[result_arr.length-1-i];
+            }
+            return num_arr;
+        }
+        function numRand() {
+            var x = 90; //上限
+            var y = 10; //下限
+            var rand = parseInt(Math.random() * (x - y + 1) + y);
+            return rand;
+        }
+        /*推荐满5个*/
+        function moreRecfoLayer(){
+            var moreRecfoLayer = new myLayer({
+                'layerCont':'.more_rec',
+                'hasShadowBg':true,
+                'shadowClose':true,
+                'funcs':{
+                    '.close_btn':function(){
+                        moreRecfoLayer.destory();
+                    }
+                }
+            });
+            return moreRecfoLayer;
+        }
+    </script>
+</body>
+</html>

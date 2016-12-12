@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <style>
+        body{background-color: #f11f50;}
+        #body_wrapper{background: rgba(241,31,80,1) url(images/anniversary_6.png) no-repeat center top;background-size:contain;min-height:5rem;}
+        .anniver_active{padding-bottom:0.2rem;padding-top:0.76rem; }
+        .anniver_active img{display: block;margin-left:auto;margin-right:auto;}
+        .a_img_0{width: 3.04rem;position: fixed;top: 0;left: 50%;margin-left:-1.52rem;z-index: 2;}
+        .anniver_active .a_img_1{width:5.83rem;margin-top:0.82rem;}
+        .anniver_active .a_img_2{width:3.66rem;}
+        .anniver_active .a_time{color: #fff;font-size: 0.2rem;text-align: center;margin-top: 0.1rem;}
+        .anniver_active .a_items{width: 5.96rem;background-color: #e20737;margin-left:auto;margin-right:auto;padding-top: 0.14rem;border-radius: 0.1rem;margin-top:0.4rem;position: relative;padding-bottom:0.86rem;}
+        .anniver_active .a_items .a_item{width: 5.7rem;margin-bottom:0.26rem;display: block;margin-left:auto;margin-right:auto;}
+        .anniver_active .a_items .a_item>img{width:100%;}
+        .anniver_active .a_items .a_bottom_dec{display: block;width: 100%;position: absolute;bottom: 0;left: 0;}
+        .anniver_active .a_items .a_bottom_dec>img{width: 100%;}
+    </style>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <img class="a_img_0" src="images/anniversary_8.png" alt="">
+    <article id="body_wrapper">
+        <div>
+            <div class="anniver_active">
+                <div>
+                    <img class="a_img_1" src="images/anniversary_1.png" alt="">
+                    <a href="抽奖页面.html"><img class="a_img_2" src="images/anniversary_2.png" alt=""></a>
+                    <p class="a_time">2016.12.16 -2017.1.13</p>
+                </div>
+                <div class="a_items">
+                    <a class="a_item" href="推荐好友.html"><img src="images/anniversary_3.png" alt=""></a>
+                    <a class="a_item" href="再次办单.html"><img src="images/anniversary_4.png" alt=""></a>
+                    <a class="a_item" href="好友办单.html"><img src="images/anniversary_5.png" alt=""></a>
+                    <div class="a_bottom_dec"><img src="images/anniversary_7.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script>
+    </script>
+</body>
+</html>
