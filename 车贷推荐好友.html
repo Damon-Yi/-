@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>推荐好友</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="plugin/swiper/swiper.3.1.7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <style>
+        body{background-color: #103a60;}
+        input[type="radio"]{}
+        #body_wrapper{}
+        .anniver_active{padding-bottom:0.2rem;padding-top:0.76rem;min-height:5rem;max-width: 500px;margin: 0 auto;}
+        .anniver_active img{display: block;margin-left:auto;margin-right:auto;}
+        .a_img_0{width: 3.04rem;position: fixed;top: 0;left: 50%;margin-left:-1.52rem;z-index: 2;}
+        .anniver_active .a_img_1{width: 5.59rem;margin-top: 0.1rem;height: 4.24rem;}
+        .anniver_active .a_img_2{width: 4.14rem;margin-top: 0.34rem;position: relative;left: 0.24rem;height: 1.02rem;}
+        .anniver_active .a_time{color: #fff;font-size: 0.2rem;text-align: center;margin-top: 0.1rem;}
+        .anniver_active .a_items{width: 5.96rem;background-color: #e20737;margin-left:auto;margin-right:auto;padding-top: 0.14rem;border-radius: 0.1rem;margin-top:0.4rem;position: relative;padding-bottom:0.86rem;}
+        .anniver_active .a_items .a_item{width: 5.7rem;margin-bottom:0.26rem;display: block;margin-left:auto;margin-right:auto;}
+        .anniver_active .a_items .a_item>img{width:100%;}
+        .anniver_active .a_items .a_bottom_dec{display: block;width: 100%;position: absolute;bottom: 0;left: 0;}
+        .anniver_active .a_items .a_bottom_dec>img{width: 100%;}
+
+        .re_cont{padding:0.26rem;}
+
+        .re_cont .re_form{color: #626161;font-size: 0.26rem;background-color: #ff8749;padding: 0.08rem;border-radius: 0.1rem;margin-top: 0.44rem;position: relative;}
+        .re_cont .re_form>div{background-color: #fff;border-radius: 0.1rem;padding: 0.82rem 0.3rem 0.3rem;}
+        .re_cont .re_form .re_f_line1{position: absolute;top: -0.36rem;left: 50%;margin-left:-2.15rem;}
+        .re_cont .re_form .re_f_line1>img{width: 4.3rem;}
+        .re_cont .re_form .re_f_line2{margin-top: 0.22rem;padding-left:0.24rem;}
+        .re_cont .re_form table{color: #908c8c;}
+        .re_cont .re_form table input[type="text"],input[type="tel"]{border:none;height: 0.5rem;width: 3.7rem;border-radius: 0;font-size: 0.26rem;-webkit-box-flex: 1;resize: none;background: none;}
+        .re_cont .re_form table td{text-align: left;}
+        .re_cont .re_form table td:first-child{padding:0.2rem 0.2rem 0 0.34rem;}
+        .re_cont .re_form table td:last-child{border-bottom: 1px solid #c5c5c5;padding: 0.2rem 0 0;}
+        .re_cont .re_form table tr:last-child td:last-child{border-bottom:none;}
+        .re_cont .re_form table td input[type="radio"],.re_cont .re_form table td span{display: inline-block;vertical-align: middle;}
+        .re_cont .re_form table td select{width: 3.7rem;height: 0.5rem;background-color: #fff;border:1px solid #aaa;color: #908c8c;}
+        .re_cont .re_form .re_radio_wrap{height: 0.5rem;}
+        .re_cont .re_form .re_radio_wrap>label{display: block;width: 50%;float: left;padding-left: 0.36rem;margin-top: 0.08rem;}
+        .re_cont .re_form table td input[type="radio"]{margin: 0 0.1rem 0 0;background-color: #ff8749;border:1px solid #ff8749;}
+        .re_cont .re_form .re_f_icon{width: 0.4rem;height: 0.42rem;}
+        .re_cont .re_form .re_f_line3{margin-top: 0.44rem;margin-bottom: 0.14rem;}
+        .re_cont .re_form .re_f_line3>img{width: 4.35rem;}
+        .re_cont .re_form .re_f_line4{text-align: left;width: 4.35rem;margin: 0 auto;}
+        .re_cont .re_form .re_col_right input:checked+span{}
+
+        .re_cont .re_rule{color: #5e5e5e;font-size: 0.2rem;background-color: #ff8749;padding: 0.08rem;border-radius: 0.1rem;margin-top: 0.42rem;position: relative;}
+        .re_cont .re_rule>div{background-color: #fff;border-radius: 0.1rem;padding:0.3rem;}
+        .re_cont .re_rule .re_r_p_1{color: #ff8749;font-size: 0.26rem;text-align: center;position: relative;height: 0.5rem;line-height: 0.5rem;}
+        .re_cont .re_rule .re_r_p_1:before{content:"";position: absolute;display: block;height: 1px;width:1.82rem;background-color: #ff8749;left: 0.1rem;top:0.24rem;}
+        .re_cont .re_rule .re_r_p_1:after{content:"";position: absolute;display: block;height: 1px;width:1.82rem;background-color: #ff8749;right: 0.1rem;top:0.24rem;}
+        .re_cont .re_rule .re_r_p_2{word-break: break-all;margin-top: 0.1rem;}
+        .re_cont .re_rule .re_r_p_3{word-break: break-all;margin-top: 0.26rem;margin-bottom: 0.26rem;}
+        .re_cont .re_rule .re_r_p_2>span{color: #ff8749;}
+
+        /*推荐满5个*/
+        .more_rec{display: none;width:4.5rem;position: relative;margin: 0 auto;padding-top: 1.2rem;padding: 0.36rem;}
+        .more_rec>div{width:3.6rem;background-color: #ffedc3;border-radius: 0.1rem;padding-top: 0.3rem;padding-bottom: 0.37rem;}
+        .more_rec .p_1{font-size: 0.2rem;color: #565656;margin-top: 0.16rem;margin-bottom: 0.34rem;}
+        .more_rec .p_2{font-size: 0.26rem;color: #ff8749;margin-bottom: 0.08rem;}
+        .more_rec .grab_btn{width:2rem;margin:0.4rem auto 0.18rem;font-size: 0;height:0.48rem;background: url(images/anniversary_23.png) no-repeat center center;background-size: contain;color: #fff;font-size: 0.24rem;text-align: center;line-height: 0.48rem;}
+        .more_rec .grab_btn>img{width:100%;}
+        .more_rec .close_btn{position: absolute;width:0.3rem;font-size: 0;top: 0;right: 0.1rem;}
+        .more_rec .close_btn>img{width:100%;}
+        
+    </style>
+    <script type="text/javascript">
+        var aScroll;
+        function loaded () {
+            aScroll = new IScroll('#body_wrapper',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click: true 
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <img class="a_img_0" src="images/anniversary_8.png" alt="">
+    <article id="body_wrapper">
+        <div>
+            <div class="anniver_active">
+                <div>
+                    <img class="a_img_1" src="images/car_1.png" alt="">
+                    <img class="a_img_2" src="images/car_2.png" alt="">
+                </div>
+                <div class="re_cont">
+                    <div class="re_form">
+                        <div>
+                            <div class="re_f_line1"><img src="images/car_3.png" alt=""></div>
+                            <table>
+                                <tr>
+                                    <td><img class="re_f_icon" src="images/car_8.png" alt=""></td>
+                                    <td><input class="name" type="text" placeholder="好友姓名"></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="re_f_icon" src="images/car_9.png" alt=""></td>
+                                    <td><input class="phone" type="tel" pat='/^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/' placeholder="好友手机号"></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="re_f_icon" src="images/car_4.png" alt=""></td>
+                                    <td>
+                                        <div class="re_radio_wrap">
+                                            <label for="sex_man"><input type="radio" name="sex" id="sex_man" value="0" checked="checked"><span>男</span></label>
+                                            <label for="sex_woman"><input type="radio" name="sex" id="sex_woman" value="1"><span>女</span></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img class="re_f_icon" src="images/car_5.png" alt=""></td>
+                                    <td><input class="location" type="text" placeholder="购车所在省市"></td>
+                                </tr>
+                                <tr>
+                                    <td><img class="re_f_icon" src="images/car_6.png" alt=""></td>
+                                    <td>
+                                        <select class="time" name="" id="">
+                                            <option value="1">一周内</option>
+                                            <option value="2">一个月内</option>
+                                            <option value="3">三个月内</option>
+                                            <option value="4">三个月以上</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="re_f_line3">
+                                <img src="images/car_7.png" alt="">
+                            </div>
+                            <p class="re_f_line4">工作人员将进行资料筛选，并于5个工作日内与筛选通过的购车人联系。</p>
+                        </div>
+                    </div>
+                    <div class="re_rule">
+                        <div>
+                            <p class="re_r_p_1">活动规则</p>
+                            <p class="re_r_p_2">1、好友在您推荐后的15天内成功申请佰仟汽车分期业务（您也可推荐自己办理佰仟汽车分期业务），并且在之后完成放款，好友即可获得500元油卡奖励。您可于第二天上午收到一个抽奖通知。</p>
+                            <p class="re_r_p_2">2、抽中金额立马抵扣到您的还款计划中。<br/>如果您抽到“全免单”，佰仟为您减免最近办理的一笔合同的全部剩余还款额，合同在第二天自动提前结清。如果您抽到“还款抵用券”，系统会自动为您抵扣每个月的客户服务费和财务管理费，从最近一期开始抵扣，直至券额抵清。如果费用不足以抵扣，您在90天内再办理佰仟分期可继续抵扣。 </p>
+                            <p class="re_r_p_3">奖励以推荐提交的时间(2016.12.16-2017.01.13)为准。</p>
+                            <p class="re_r_p_2">*依国家相关法律规定，还款减免金额不得高于5000元。<br/>
+                            *本活动最终解释权归佰仟金融所有。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!--推荐满5个-->
+    <div class="more_rec">
+        <div>
+            <p class="p_2">推荐成功！</p> 
+            <p class="p_1">您还可继续推荐哦！</p> 
+            <div class="grab_btn">确定</div>
+            <div class="close_btn"><img src="images/anniversary_21.png" alt=""></div>
+        </div>
+    </div>
+    <script>
+        /*loading效果*/
+        var loader = new loading();
+
+        $(function(){
+            /*性别选择*/
+            $('.re_radio_wrap>label').on('tap',function(){
+                $(this).find('input[type="radio"]').prop('checked',true);
+            });
+            /*推荐*/
+            $('.re_f_line3>img').on('tap',function(){
+                var $phone = $('.re_form').find('.phone'),
+                phonePattern = eval($phone.attr('pat')),
+                $name = $('.re_form').find('.name'),
+                $sex = $('.re_form').find('input[type="radio"]:checked'),
+                $location = $('.re_form').find('.location'),
+                $time = $('.re_form').find('.time');
+
+                console.log($time[0]);
+                /*姓名*/
+                if($name.val()==''){
+                    tips('请填写姓名','tips_center',1500);
+                    return false;
+                }
+                /*手机号*/
+                if($phone.val()==''){
+                    tips('请填写手机号','tips_center',1500);
+                    return false;
+                }else if(!phonePattern.test($phone.val())){
+                    tips('手机号格式不对','tips_center',1500);
+                    return false;
+                }else{
+                    /*提交*/
+                    loader.show();
+                    setTimeout(function(){
+                        
+                        moreRecfoLayer().show();
+
+                        loader.hide();
+                    },1000);
+                }
+            });
+        });
+        
+        /*推荐满5个*/
+        function moreRecfoLayer(){
+            var moreRecfoLayer = new myLayer({
+                'layerCont':'.more_rec',
+                'hasShadowBg':true,
+                'shadowClose':true,
+                'funcs':{
+                    '.close_btn':function(){
+                        moreRecfoLayer.destory();
+                        clearForm();
+                    },
+                    '.grab_btn':function(){
+                        moreRecfoLayer.destory();
+                        clearForm();
+                    }
+                }
+            });
+            return moreRecfoLayer;
+        }
+        /*表单清空*/
+        function clearForm(){
+            $('.re_form input[type="text"],.re_form input[type="tel"]').each(function(){
+                $(this).val('');
+            });
+            $('#sex_man').prop('checked',true);
+            $('.re_form .time').val('1');
+        }
+    </script>
+</body>
+</html>
