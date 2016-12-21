@@ -5,12 +5,12 @@
     <title>推荐好友</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="format-detection" content="telephone=no" />
-    <link href="css/public.css" rel="stylesheet" type="text/css">
-    <link href="plugin/swiper/swiper.3.1.7.min.css" rel="stylesheet" type="text/css">
-    <script src="js/public.js"></script>
-    <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
-    <script type="text/javascript" src="plugin/zepto/zepto.js"></script>
-    <script type="text/javascript" src="plugin/zepto/touch.js"></script>
+    <link href="/car/css/public.css" rel="stylesheet" type="text/css">
+    <link href="/car/plugin/swiper/swiper.3.1.7.min.css" rel="stylesheet" type="text/css">
+    <script src="/car/js/public.js"></script>
+    <script type="text/javascript" src="/car/plugin/iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="/car/plugin/zepto/zepto.js"></script>
+    <script type="text/javascript" src="/car/plugin/zepto/touch.js"></script>
     <style>
         body{background-color: #103a60;}
         input[type="radio"]{}
@@ -65,11 +65,13 @@
         .more_rec>div{width:3.6rem;background-color: #ffedc3;border-radius: 0.1rem;padding-top: 0.3rem;padding-bottom: 0.37rem;}
         .more_rec .p_1{font-size: 0.2rem;color: #565656;margin-top: 0.16rem;margin-bottom: 0.34rem;}
         .more_rec .p_2{font-size: 0.26rem;color: #ff8749;margin-bottom: 0.08rem;}
-        .more_rec .grab_btn{width:2rem;margin:0.4rem auto 0.18rem;font-size: 0;height:0.48rem;background: url(images/anniversary_23.png) no-repeat center center;background-size: contain;color: #fff;font-size: 0.24rem;text-align: center;line-height: 0.48rem;}
+        .more_rec .grab_btn{width:2rem;margin:0.4rem auto 0.18rem;font-size: 0;height:0.48rem;background: url(/car/images/anniversary_23.png) no-repeat center center;background-size: contain;color: #fff;font-size: 0.24rem;text-align: center;line-height: 0.48rem;}
         .more_rec .grab_btn>img{width:100%;}
         .more_rec .close_btn{position: absolute;width:0.3rem;font-size: 0;top: 0;right: 0.1rem;}
         .more_rec .close_btn>img{width:100%;}
         
+        .tips {line-height: 1;}
+        .tips_center{max-width:60%;}
     </style>
     <script type="text/javascript">
         var aScroll;
@@ -86,54 +88,54 @@
     </script>
 </head>
 <body onload="loaded()">
-    <img class="a_img_0" src="images/anniversary_8.png" alt="">
+    <img class="a_img_0" src="/car/images/anniversary_8.png" alt="">
     <article id="body_wrapper">
         <div>
             <div class="anniver_active">
                 <div>
-                    <img class="a_img_1" src="images/car_1.png" alt="">
-                    <img class="a_img_2" src="images/car_2.png" alt="">
+                    <img class="a_img_1" src="/car/images/car_1.png" alt="">
+                    <img class="a_img_2" src="/car/images/car_2.png" alt="">
                 </div>
                 <div class="re_cont">
                     <div class="re_form">
                         <div>
-                            <div class="re_f_line1"><img src="images/car_3.png" alt=""></div>
+                            <div class="re_f_line1"><img src="/car/images/car_3.png" alt=""></div>
                             <table>
                                 <tr>
-                                    <td><img class="re_f_icon" src="images/car_8.png" alt=""></td>
+                                    <td><img class="re_f_icon" src="/car/images/car_8.png" alt=""></td>
                                     <td><input class="name" type="text" placeholder="好友姓名"></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="re_f_icon" src="images/car_9.png" alt=""></td>
+                                    <td><img class="re_f_icon" src="/car/images/car_9.png" alt=""></td>
                                     <td><input class="phone" type="tel" pat='/^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/' placeholder="好友手机号"></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="re_f_icon" src="images/car_4.png" alt=""></td>
+                                    <td><img class="re_f_icon" src="/car/images/car_4.png" alt=""></td>
                                     <td>
                                         <div class="re_radio_wrap">
-                                            <label for="sex_man"><input type="radio" name="sex" id="sex_man" value="0" checked="checked"><span>男</span></label>
-                                            <label for="sex_woman"><input type="radio" name="sex" id="sex_woman" value="1"><span>女</span></label>
+                                            <label for="sex_man"><input type="radio" name="sex" id="sex_man" value="男" checked="checked"><span>男</span></label>
+                                            <label for="sex_woman"><input type="radio" name="sex" id="sex_woman" value="女"><span>女</span></label>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><img class="re_f_icon" src="images/car_5.png" alt=""></td>
+                                    <td><img class="re_f_icon" src="/car/images/car_5.png" alt=""></td>
                                     <td><input class="location" type="text" placeholder="购车所在省市"></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="re_f_icon" src="images/car_6.png" alt=""></td>
+                                    <td><img class="re_f_icon" src="/car/images/car_6.png" alt=""></td>
                                     <td>
                                         <select class="time" name="" id="">
-                                            <option value="1">一周内</option>
-                                            <option value="2">一个月内</option>
-                                            <option value="3">三个月内</option>
-                                            <option value="4">三个月以上</option>
+                                            <option value="一周内">一周内</option>
+                                            <option value="一个月内">一个月内</option>
+                                            <option value="三个月内">三个月内</option>
+                                            <option value="三个月以上">三个月以上</option>
                                         </select>
                                     </td>
                                 </tr>
                             </table>
                             <div class="re_f_line3">
-                                <img src="images/car_7.png" alt="">
+                                <img src="/car/images/car_7.png" alt="">
                             </div>
                             <p class="re_f_line4">工作人员将进行资料筛选，并于5个工作日内与筛选通过的购车人联系。</p>
                         </div>
@@ -152,13 +154,13 @@
             </div>
         </div>
     </article>
-    <!--推荐满5个-->
+    <!---->
     <div class="more_rec">
         <div>
             <p class="p_2">推荐成功！</p> 
             <p class="p_1">您还可继续推荐哦！</p> 
             <div class="grab_btn">确定</div>
-            <div class="close_btn"><img src="images/anniversary_21.png" alt=""></div>
+            <div class="close_btn"><img src="/car/images/anniversary_21.png" alt=""></div>
         </div>
     </div>
     <script>
@@ -195,17 +197,24 @@
                 }else{
                     /*提交*/
                     loader.show();
-                    setTimeout(function(){
-                        
-                        moreRecfoLayer().show();
-
-                        loader.hide();
-                    },1000);
+                    $.post("./car",
+                    {'name':$name.val(),'sex':$sex.val(),'phone':$phone.val(),'location':$location.val(),'time':$time.val()},
+                    function(data){
+                        if(data.error == '0'){
+                            setTimeout(function(){                        
+                                moreRecfoLayer().show();
+                                loader.hide();
+                            },1000);
+                        }else{
+                            tips(data.msg,'tips_center',1500);
+                        }
+                    },"json");
+                    
                 }
             });
         });
         
-        /*推荐满5个*/
+        /**/
         function moreRecfoLayer(){
             var moreRecfoLayer = new myLayer({
                 'layerCont':'.more_rec',
