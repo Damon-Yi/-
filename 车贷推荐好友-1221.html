@@ -35,13 +35,13 @@
         .re_cont .re_form .re_f_line1>img{width: 4.3rem;}
         .re_cont .re_form .re_f_line2{margin-top: 0.22rem;padding-left:0.24rem;}
         .re_cont .re_form table{color: #908c8c;}
-        .re_cont .re_form table input[type="text"],input[type="tel"]{border:none;height: 0.5rem;width: 3.7rem;border-radius: 0;font-size: 0.26rem;-webkit-box-flex: 1;resize: none;background: none;}
+        .re_cont .re_form table input[type="text"],input[type="tel"]{border:none;height: 0.5rem;width: 3.2rem;border-radius: 0;font-size: 0.26rem;-webkit-box-flex: 1;resize: none;background: none;font-family: "STXihei","Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;}
         .re_cont .re_form table td{text-align: left;}
-        .re_cont .re_form table td:first-child{padding:0.2rem 0.2rem 0 0.34rem;}
+        .re_cont .re_form table td:first-child{padding:0.2rem 0.1rem 0 0.1rem;}
         .re_cont .re_form table td:last-child{border-bottom: 1px solid #c5c5c5;padding: 0.2rem 0 0;}
         .re_cont .re_form table tr:last-child td:last-child{border-bottom:none;}
         .re_cont .re_form table td input[type="radio"],.re_cont .re_form table td span{display: inline-block;vertical-align: middle;}
-        .re_cont .re_form table td select{width: 3.7rem;height: 0.5rem;background-color: #fff;border:1px solid #aaa;color: #908c8c;}
+        .re_cont .re_form table td select{width: 3.5rem;height: 0.5rem;background-color: #fff;border:1px solid #aaa;color: #908c8c;margin-bottom: -1px;font-size: 0.24rem;border-radius: 2px;font-family: "STXihei","Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;}
         .re_cont .re_form .re_radio_wrap{height: 0.5rem;}
         .re_cont .re_form .re_radio_wrap>label{display: block;width: 50%;float: left;padding-left: 0.36rem;margin-top: 0.08rem;}
         .re_cont .re_form table td input[type="radio"]{margin: 0 0.1rem 0 0;background-color: #ff8749;border:1px solid #ff8749;}
@@ -69,6 +69,9 @@
         .more_rec .grab_btn>img{width:100%;}
         .more_rec .close_btn{position: absolute;width:0.3rem;font-size: 0;top: 0;right: 0.1rem;}
         .more_rec .close_btn>img{width:100%;}
+
+        .tips {line-height: 1;}
+        .tips_center{max-width:60%;}
         
     </style>
     <script type="text/javascript">
@@ -99,16 +102,16 @@
                         <div>
                             <div class="re_f_line1"><img src="images/car_3.png" alt=""></div>
                             <table>
-                                <tr>
-                                    <td><img class="re_f_icon" src="images/car_8.png" alt=""></td>
-                                    <td><input class="name" type="text" placeholder="好友姓名"></td>
+                                <tr class="valid_row">
+                                    <td>姓名:</td>
+                                    <td><input class="name" type="text" placeholder="请输入购车人姓名"></td>
+                                </tr>
+                                <tr class="valid_row">
+                                    <td>手机:</td>
+                                    <td><input class="phone" type="tel" pat='/^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/' placeholder="请输入购车人手机号"></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="re_f_icon" src="images/car_9.png" alt=""></td>
-                                    <td><input class="phone" type="tel" pat='/^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/' placeholder="好友手机号"></td>
-                                </tr>
-                                <tr>
-                                    <td><img class="re_f_icon" src="images/car_4.png" alt=""></td>
+                                    <td>性别:</td>
                                     <td>
                                         <div class="re_radio_wrap">
                                             <label for="sex_man"><input type="radio" name="sex" id="sex_man" value="0" checked="checked"><span>男</span></label>
@@ -116,18 +119,68 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><img class="re_f_icon" src="images/car_5.png" alt=""></td>
-                                    <td><input class="location" type="text" placeholder="购车所在省市"></td>
+                                <tr class="valid_row">
+                                    <td>购车省市:</td>
+                                    <td><input class="location" type="text" placeholder="请输入购车所在省市"></td>
                                 </tr>
                                 <tr>
-                                    <td><img class="re_f_icon" src="images/car_6.png" alt=""></td>
+                                    <td>购车时间:</td>
                                     <td>
                                         <select class="time" name="" id="">
-                                            <option value="1">一周内</option>
-                                            <option value="2">一个月内</option>
-                                            <option value="3">三个月内</option>
-                                            <option value="4">三个月以上</option>
+                                            <option value="一周内">一周内</option>
+                                            <option value="一个月内">一个月内</option>
+                                            <option value="三个月内">三个月内</option>
+                                            <option value="三个月以上">三个月以上</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="valid_row">
+                                    <td>身份证号:</td>
+                                    <td><input class="ID" type="text" placeholder="请输入购车人身份证号"></td>
+                                </tr>
+                                <tr class="valid_row">
+                                    <td>年龄:</td>
+                                    <td><input class="old" type="tel" placeholder="请输入购车人年龄">岁</td>
+                                </tr>
+                                <tr>
+                                    <td>驾照:</td>
+                                    <td>
+                                        <div class="re_radio_wrap">
+                                            <label for="driving_license_has"><input type="radio" name="driving_license" id="driving_license_has" value="0" checked="checked"><span>有</span></label>
+                                            <label for="driving_license_no"><input type="radio" name="driving_license" id="driving_license_no" value="1"><span>无</span></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="valid_row">
+                                    <td>车型:</td>
+                                    <td><input class="car_style" type="text" placeholder="请输入品牌/车系/车型"></td>
+                                </tr>
+                                <tr class="valid_row">
+                                    <td>首付比例:</td>
+                                    <td>
+                                        <select class="pay_rate" name="" id="">
+                                            <option value="1">10%</option>
+                                            <option value="2">20%</option>
+                                            <option value="3">30%</option>
+                                            <option value="4">40%</option>
+                                            <option value="5">50%</option>
+                                            <option value="6">60%</option>
+                                            <option value="7">70%</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="valid_row">
+                                    <td>意向车价:</td>
+                                    <td><input class="car_price" type="tel" placeholder="请输入意向车价">元</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>融资期限:</td>
+                                    <td>
+                                        <select class="financing_maturity" name="" id="">
+                                            <option value="1">12期</option>
+                                            <option value="2">24期</option>
+                                            <option value="3">36期</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -143,6 +196,7 @@
                             <p class="re_r_p_1">活动规则</p>
                             <p class="re_r_p_2">1、好友在您推荐后的15天内成功申请佰仟汽车分期业务（您也可推荐自己办理佰仟汽车分期业务），并且在之后完成放款，好友即可获得500元油卡奖励。您可于第二天上午收到一个抽奖通知。</p>
                             <p class="re_r_p_2">2、抽中金额立马抵扣到您的还款计划中。<br/>如果您抽到“全免单”，佰仟为您减免最近办理的一笔合同的全部剩余还款额，合同在第二天自动提前结清。如果您抽到“还款抵用券”，系统会自动为您抵扣每个月的客户服务费和财务管理费，从最近一期开始抵扣，直至券额抵清。如果费用不足以抵扣，您在90天内再办理佰仟分期可继续抵扣。 </p>
+                            <p class="re_r_p_2">3、该活动申请不提供现金，客户购车时，直接将钱给付4S店或者二手车商，客户直接提车。 </p>
                             <p class="re_r_p_3">奖励以推荐提交的时间(2016.12.16-2017.01.13)为准。</p>
                             <p class="re_r_p_2">*依国家相关法律规定，还款减免金额不得高于5000元。<br/>
                             *本活动最终解释权归佰仟金融所有。</p>
@@ -152,7 +206,7 @@
             </div>
         </div>
     </article>
-    <!--推荐满5个-->
+    <!---->
     <div class="more_rec">
         <div>
             <p class="p_2">推荐成功！</p> 
@@ -173,27 +227,66 @@
             /*推荐*/
             $('.re_f_line3>img').on('tap',function(){
                 var $phone = $('.re_form').find('.phone'),
-                phonePattern = eval($phone.attr('pat')),
                 $name = $('.re_form').find('.name'),
-                $sex = $('.re_form').find('input[type="radio"]:checked'),
+                $sex = $('.re_form').find('input[name="sex"]:checked'),
                 $location = $('.re_form').find('.location'),
-                $time = $('.re_form').find('.time');
+                $time = $('.re_form').find('.time'),
+                $ID = $('.re_form').find('.ID'),
+                $old = $('.re_form').find('.old'),
+                $drivingLicense = $('.re_form').find('input[name="driving_license"]:checked'),
+                $carStyle = $('.re_form').find('.car_style'),
+                $payRate = $('.re_form').find('.pay_rate'),
+                $carPrice = $('.re_form').find('.car_price'),
+                $financingMaturity = $('.re_form').find('.financing_maturity');
 
-                console.log($time[0]);
-                /*姓名*/
-                if($name.val()==''){
-                    tips('请填写姓名','tips_center',1500);
-                    return false;
-                }
-                /*手机号*/
-                if($phone.val()==''){
-                    tips('请填写手机号','tips_center',1500);
-                    return false;
-                }else if(!phonePattern.test($phone.val())){
-                    tips('手机号格式不对','tips_center',1500);
-                    return false;
-                }else{
-                    /*提交*/
+                console.log($phone);
+                console.log($name);
+                console.log($sex);
+                console.log($location);
+                console.log($time);
+                console.log($ID);
+                console.log($old);
+                console.log($drivingLicense);
+                console.log($carStyle);
+                console.log($payRate);
+                console.log($carPrice);
+                console.log($financingMaturity);
+                
+                var validFlag = true;
+                $('.valid_row').each(function(){
+                    var inputItem = $(this).find('input'), 
+                        rowTxt = '请填写'+$(this).children('td').eq(0).text();
+                        rowTxt = rowTxt.substring(0,rowTxt.length-1); 
+                    if(inputItem[0]&&inputItem.val()==''){
+                        tips(rowTxt,'tips_center',1000);
+                        validFlag = false;
+                        return false;
+                    }
+                    if(inputItem.hasClass('phone')){
+                        var phonePattern = eval(inputItem.attr('pat'));
+                        if(!phonePattern.test(inputItem.val())){
+                            tips('手机号格式不对','tips_center',1500);
+                            validFlag = false;
+                            return false;
+                        }
+                    }
+                    if(inputItem.hasClass('car_price')){
+                        var carPrice = Number(inputItem.val());
+                        if(carPrice){
+                            if(carPrice<30000){
+                               tips('意向价格，不能低于30000','tips_center',1500);
+                                validFlag = false;
+                                return false; 
+                            }
+                        }else{
+                            tips('意向价格必须为正整数','tips_center',1500);
+                            validFlag = false;
+                            return false;
+                        }
+                    }
+                });
+                /*提交*/
+                if(validFlag){
                     loader.show();
                     setTimeout(function(){
                         
@@ -205,7 +298,7 @@
             });
         });
         
-        /*推荐满5个*/
+        /**/
         function moreRecfoLayer(){
             var moreRecfoLayer = new myLayer({
                 'layerCont':'.more_rec',
